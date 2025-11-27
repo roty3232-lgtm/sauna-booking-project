@@ -2,12 +2,12 @@
   "name": "sauna-booking",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+ "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx prisma generate && next build",  // <--- C'EST CETTE LIGNE QUI FIXE L'ERREUR VERCEL
     "start": "next start",
-    "lint": "eslint"
-  },
+    "lint": "next lint"
+  },  
   "dependencies": {
     "next": "16.0.5",
     "react": "19.2.0",
