@@ -1,0 +1,35 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Location {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  img         String
+  price       Int
+  capacity    Int      @default(4)
+  createdAt   DateTime @default(now())
+}
+
+model Booking {
+  id            String   @id @default(cuid())
+  date          String
+  time          String
+  customerEmail String?
+  customerName  String?
+  customerPhone String?
+  locationId    String
+  
+  // La nouvelle ligne est ici 👇
+  status        String   @default("PENDING")
+  
+  createdAt     DateTime @default(now())
+}
