@@ -1,0 +1,11 @@
+# netlify.toml
+
+# Configuration du build Next.js sur Netlify
+[build]
+  command = "npm run build"
+  publish = ".next" # Le dossier de sortie des assets
+
+# Utiliser le plugin Next.js Build pour gérer les fonctions et les redirections
+[functions]
+  node_bundler = "esbuild"
+  node_version = "18"
