@@ -5,6 +5,8 @@ import prisma from '@/lib/prisma';
 import { TIME_SLOTS } from '@/lib/constants';
 import BookingWrapper from '@/components/BookingWrapper'; // <-- Ici on veut le BookingWrapper, pas l'Admin !
 
+export const dynamic = "force-dynamic";
+
 export default async function PageAccueil() {
   const locations = await prisma.location.findMany();
 
