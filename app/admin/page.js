@@ -3,6 +3,8 @@ import React from 'react';
 import prisma from '@/lib/prisma';
 import AdminWrapper from '@/components/AdminWrapper';
 
+export const dynamic = "force-dynamic";
+
 export default async function PageGerant() {
   const locations = await prisma.location.findMany();
   const bookings = await prisma.booking.findMany({
